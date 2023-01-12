@@ -7,13 +7,32 @@ import { db } from "../utils/Firebase";
 const ItemListDetail = () => {
   const [item, setItem] = useState({})
   const { id } = useParams(); 
-  const getProduct = async(id)=>{
+ {/* const getProduct = async(id)=>{
     const docRef = doc(db,"datos", id)
     const docSnap = await getDoc(docRef)
 
       setItem(docSnap.data())
       
     
+    } */}
+
+async function getOne(id) {
+      try {
+      const docRef = doc (db, "datos", id);
+      const docResult = await getDoc(docRef);
+ 
+      if (docResult.exists()){
+      return { 
+      
+        id: docResult.id, ...docResult.data()};
+      }
+      else{
+        throw new Error("El producto no se encontró en la base de datos");
+      }
+    }
+    catch(errorMsg) {
+      console.error(errorMsg)
+    }
     }
   {/*const getOne = () => {
     return new Promise((resolve, reject) => {
@@ -28,11 +47,11 @@ const ItemListDetail = () => {
   }*/}
 
   useEffect(() => {
-    getProduct()
-    {/*getOne()
+    
+    getOne()
       .then(res => setItem(res))
-  .catch(err => console.log(err))*/}
-  },[], {/*[id]*/})
+  .catch(err => console.log(err))
+  })
 
 
 

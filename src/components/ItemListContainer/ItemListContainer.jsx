@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 //import Db  from '../../../db/firebase-confing';
 import { ListadoProdutos } from '../../data/dates'
 import { db } from '../../utils/Firebase';
+import Description from '../filter';
 import { ItemList } from '../ItemList/ItemList';
 
 
@@ -38,6 +39,7 @@ const ItemListContainer = ({ greetings }) => {
   useEffect(() => {
     getProducts()
     
+
     {/*getProductos()
       .then(res => {
         if(id){
@@ -57,7 +59,7 @@ const ItemListContainer = ({ greetings }) => {
       </div>
         
        <ItemList listadoProductos={productos}/>
-
+      
     </main>
   );
 };
