@@ -1,21 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Item = ({ name, image, price, id }) => {
-
+const Item = ({ name, image, price, id }) => {   
     return (
-        <div className="col">
-            <div className="card wd-18 col-6">
+        <div className='col'>
+            <div className='card cardStyle'>
                 <img src={image} alt={name} className='card-img-top' />
-                <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <p>{price}$</p>
-                    <Link to={`/detail/${id}`}>
-                    <button className="btn btn-primary">Ver más</button>
-                    </Link>
+                <div className='card-body'>
+                    <h5 className='card-title'>{name}</h5>
+                    <p>{price}</p>
+                    
+                    {/* El ver mas va a ir al detalle del producto, por eso se hace con un link y de forma dinamica con el id del producto */}
+                    <Link to={`/item/${id}`} className='btn btn_ver_mas'>Ver más</Link>
                 </div>
             </div>
         </div>
     )
 }
+
 export default Item

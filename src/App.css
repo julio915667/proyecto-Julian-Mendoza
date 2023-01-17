@@ -293,3 +293,23 @@ nav a{
 .animate__bounceIn{
   animation-duration:2s;
 }
+
+.CartDisplay{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.formCheckout{
+  background-color: #212529;
+    padding: 10px;
+}
+.ItemDetailBG{
+  background-color: white;
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
